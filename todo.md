@@ -49,4 +49,4 @@ idemplacement           | 000103002
 
 
 
-integrate the map with iframe look at the cart in the documentation implementation 
+integrate the map using react leaflet libraryy
