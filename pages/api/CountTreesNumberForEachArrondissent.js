@@ -3,15 +3,17 @@
 
 import { fetchArbreRemarquableParis } from "../../lib/fetchTreeDataTenItemPerPage";
 import { countTreesByArrondissement } from "../../lib/filterData";
+import { transformDataForBarGraph } from "../../lib/transformData";
 
 export default async function handler(req, res) {
         try {
                 const Trees = await fetchArbreRemarquableParis();
                 // write a function to count the number of trees for each arrondissement
 		const treesCount=countTreesByArrondissement(Trees);
+                let transformedData = transformDataForBarGraph(treesCount);
 
                 if (Trees.length !== 0) {
-                        res.json(treesCount);
+                        res.json(transformedData);
                 } else {
                         res.json({
                                 message: `page could not be found`,
