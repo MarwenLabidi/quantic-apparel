@@ -25,7 +25,7 @@ const Scatterplot = () => {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: 'weight',
+            legend: 'circonference en cm',
             legendPosition: 'middle',
             legendOffset: 46
         }}
@@ -34,7 +34,7 @@ const Scatterplot = () => {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: 'size',
+            legend: 'hauteur en m',
             legendPosition: 'middle',
             legendOffset: -60
         }}
