@@ -15,26 +15,35 @@ const BarGraph = () => {
                                 keys={["TreesNumber"]} 
                                 indexBy='Arrondissent'
                                 margin={{
-                                        top: 50,
-                                        right: 130,
-                                        bottom: 50,
-                                        left: 60,
+                                        top: 100,
+                                        right: 80,
+                                        bottom: 100,
+                                        left: 80,
                                 }}
-                                padding={0.4}
+                                padding={0.7}
                                 valueScale={{ type: "linear" }}
-                                colors='#3182CE'
+                                colors='#5f259f'
                                 animate={true}
-                                enableLabel={true}
+                                enableLabel={false}
                                 axisTop={null}
                                 axisRight={null}
                                 axisLeft={{
                                         tickSize: 5,
                                         tickPadding: 5,
                                         tickRotation: 0,
-                                        legend: "degrees",
+                                        legend: "TreesNumber",
                                         legendPosition: "middle",
                                         legendOffset: -40,
                                 }}
+                                axisBottom={{
+                                  tickSize: 5,
+                                  tickPadding: 8,
+                                  tickRotation: 25,
+                                  legend: "Arrondissent",
+                                  legendPosition: "middle",
+                                  legendOffset: 80,
+                          }}
+                                
                         />)}
                 </div>
         );
