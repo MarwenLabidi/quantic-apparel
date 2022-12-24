@@ -27,6 +27,7 @@
 
 
 	transition: all 0.3s ease-in-out ;
+	letter-spacing:2px;
 
 }
 .button:hover,.button:focus{
