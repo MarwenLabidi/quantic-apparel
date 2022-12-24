@@ -19,7 +19,7 @@ const SideBar = () => {
                                 className={logo}
                                 src='/LOGO.png'
                                 alt='Picture of the author'
-                                width={255}
+                                width={230}
                                 height={38}
                         />
                         <main className={menu}>
