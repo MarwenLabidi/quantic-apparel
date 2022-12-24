@@ -9,6 +9,7 @@ specifiers:
   next: 13.1.0
   react: 18.2.0
   react-dom: 18.2.0
+  react-table: ^7.8.0
   swr: ^2.0.0
 
 dependencies:
@@ -20,6 +21,7 @@ dependencies:
   next: 13.1.0_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-table: 7.8.0_react@18.2.0
   swr: 2.0.0_react@18.2.0
 
 packages:
@@ -588,6 +590,14 @@ packages:
 
   /react-lifecycles-compat/3.0.4:
     resolution: {integrity: sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==}
+    dev: false
+
+  /react-table/7.8.0_react@18.2.0:
+    resolution: {integrity: sha512-hNaz4ygkZO4bESeFfnfOft73iBUj8K5oKi1EcSHPAibEydfsX2MyU6Z8KCr3mv3C9Kqqh71U+DhZkFvibbnPbA==}
+    peerDependencies:
+      react: ^16.8.3 || ^17.0.0-0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react/18.2.0:
