@@ -27,6 +27,7 @@ const BarGraph = () => {
                                 enableLabel={false}
                                 axisTop={null}
                                 axisRight={null}
+                                isInteractive={false}
                                 axisLeft={{
                                         tickSize: 5,
                                         tickPadding: 5,
