@@ -2,7 +2,7 @@
 //NOTE : write a function to filter all the trees by arrondissement(arrays of ech arondisment have his trees) and count the number(percentage) of trees for each arrondissement
 
 import { fetchArbreRemarquableParis } from "../../lib/fetchTreeDataTenItemPerPage";
-import { getArrondissement } from "../../lib/filterData";
+import { getArrondissement,deleteDuplicates } from "../../lib/filterData";
 
 export default async function handler(req, res) {
         try {
@@ -10,10 +10,11 @@ export default async function handler(req, res) {
                 //write a function to get all arrondissements from the data
 		const arrondissements = getArrondissement(Trees);
                 // write a function to delete duplicate value
+		const arrondissementsWithoutDuplicates = deleteDuplicates(arrondissements);
                 // write a function to count the number of trees for each arrondissement
 
                 if (Trees.length !== 0) {
-                        res.json(arrondissements);
+                        res.json(arrondissementsWithoutDuplicates);
                 } else {
                         res.json({
                                 message: `page could not be found`,
