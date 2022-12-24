@@ -2,7 +2,7 @@
 //NOTE : write a function to filter all the trees by arrondissement(arrays of ech arondisment have his trees) and count the number(percentage) of remarquabale trees for each arrondissement
 import { fetchArbreRemarquableParis } from "../../lib/fetchTreeDataTenItemPerPage";
 import { getArrondissement ,getTreesByLocation} from "../../lib/filterData";
-import { getRemarquablePercentage } from "../../lib/transformData";
+import { getRemarquablePercentage ,convertObjectToArrayAndAddIDandLabel} from "../../lib/transformData";
 
 export default async function handler(req, res) {
         try {
@@ -10,10 +10,11 @@ export default async function handler(req, res) {
                 const arrondissement = getArrondissement(Trees);
                 const treesByLocation = getTreesByLocation(arrondissement, Trees);
                 const percentageOfRemarquableTreeForEachArrondissement = getRemarquablePercentage(treesByLocation,arrondissement);
+                const finalResult=convertObjectToArrayAndAddIDandLabel(percentageOfRemarquableTreeForEachArrondissement)
 
 
                 if (Trees.length !== 0) {
-                        res.json(percentageOfRemarquableTreeForEachArrondissement);
+                        res.json(finalResult);
                 } else {
                         res.json({
                                 message: `page could not be found`,

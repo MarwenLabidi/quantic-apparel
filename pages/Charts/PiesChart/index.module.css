@@ -1,4 +1,8 @@
 .piesChart{
 	width:80%;
 	background-color:white;
+	overflow-y: scroll; 
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+
 }
