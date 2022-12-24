@@ -1,7 +1,7 @@
-
+import {barGraph} from"./index.module.css"
 const BarGraph = () => {
   return (
-    <div>BarGraph</div>
+    <div className={barGraph}>BarGraph</div>
   )
 }
 

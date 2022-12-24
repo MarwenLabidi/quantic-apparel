@@ -1,7 +1,7 @@
-
+import {map}from "./index.module.css";
 const Map = () => {
   return (
-    <div>Map</div>
+    <div className={map}>Map</div>
   )
 }
 

@@ -1,7 +1,7 @@
-
+import {piesChart}from"./index.module.css"
 const PiesChart = () => {
   return (
-    <div>PiesChart</div>
+    <div className={piesChart}>PiesChart</div>
   )
 }
 

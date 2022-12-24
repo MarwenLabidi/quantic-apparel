@@ -1,7 +1,7 @@
-
+import {LesArbresRemarquables}from"./index.module.css"
 const LesArbresRemarquable = () => {
   return (
-    <div>LesArbresRemarquable</div>
+    <div className={LesArbresRemarquables}>LesArbresRemarquable</div>
   )
 }
 

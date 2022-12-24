@@ -1,7 +1,7 @@
-
+import {scatterplot}from"./index.module.css"
 const Scatterplot = () => {
   return (
-    <div>Scatterplot</div>
+    <div className={scatterplot}>Scatterplot</div>
   )
 }
 
