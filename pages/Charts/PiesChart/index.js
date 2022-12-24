@@ -20,7 +20,7 @@ const PiesChart = () => {
       cornerRadius={3}
       activeOuterRadiusOffset={8}
       borderWidth={1}
-      animate={false}
+      isInteractive={false}
       borderColor={{ from: "color", modifiers: [["darker", 0.2]] }}
       arcLinkLabelsSkipAngle={10}
       arcLinkLabelsTextColor="#333333"
