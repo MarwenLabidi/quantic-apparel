@@ -1,6 +1,6 @@
 const URL="http://localhost:3000/api/GetThePercentageOfRemarquableTreeForEachArrondisseent"
 import { ResponsivePie } from "@nivo/pie"
-import {piesChart}from"./index.module.css"
+import {piesChart,name}from"./index.module.css"
 import useSWR from "swr";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -11,7 +11,7 @@ const PiesChart = () => {
     <div className={piesChart}>
    {
     (data)&&(data.map((pieData,index)=>(<div>
-      <h3>{pieData[0].id}</h3>
+      <h3 className={name}>{pieData[0].id}</h3>
       <ResponsivePie
       data={pieData}
       key={index}
