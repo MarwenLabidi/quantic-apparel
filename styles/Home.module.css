@@ -3,3 +3,8 @@
 	color:var(--clr_white);
 	width:80%;
 }
+
+.header{
+	height:20vh;
+	background: linear-gradient(to bottom, #5f259f, #d7bff0);
+}

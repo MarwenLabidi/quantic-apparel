@@ -1,11 +1,13 @@
 
-import {home} from "../styles/Home.module.css";
+import {home,header} from "../styles/Home.module.css";
 
 
 export default function Home() {
         return (
                 <div className={home}>
-                        <h1 >this is my dashboard</h1>
+                        <header className={header}>
+
+                        </header>
                 </div>
         );
 }
