@@ -2,7 +2,34 @@
 	background-color:var(--clr_dark);
 	width:20%;
 	border-right:1px solid var(--clr_white);
+	color:var(--clr_white)
 }
 .logo{
-	margin:25px auto;
+	margin:35px auto;
+}
+.button{
+	margin:5px auto;
+	margin-bottom:20px;
+	display:block;
+	width:80%;
+	padding:15px;
+	color:var(--clr_white);
+	background-color: Transparent;
+	border: none;      
+	border-radius:10px;
+	outline:red;
+	text-align:left;
+	/* border-bottom:1px solid var( --clr_primary); */
+	border-left:1px solid var( --clr_primary);
+	transition: all 0.3s ease-in-out ;
+
+}
+.button:hover,.button:focus{
+	cursor:pointer;
+	background-color: var( --clr_primary) ;
+
+}
+.title{
+	margin-left:32px;
+	opacity:0.5;
 }
