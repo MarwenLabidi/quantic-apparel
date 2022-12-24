@@ -1,11 +1,16 @@
 import {scatterplot}from"./index.module.css"
 import{ResponsiveScatterPlot} from"@nivo/scatterplot"
-let data=[{data:[{x:53,y:7},{x:240,y:9}]}]
+const URL="http://localhost:3000/api/GetTheHeightAndTheCircumferenceForEchTree"
+import useSWR from "swr";
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
+
 const Scatterplot = () => {
+  const { data, error, isLoading } = useSWR(URL, fetcher);
+
   return (
     <div className={scatterplot}>
-
-<ResponsiveScatterPlot
+      {data&&(
+        <ResponsiveScatterPlot
         data={data}
         margin={{ top: 60, right: 140, bottom: 70, left: 90 }}
         xScale={{ type: 'linear', min: 0, max: 'auto' }}
@@ -57,6 +62,9 @@ const Scatterplot = () => {
             }
         ]}
     />
+
+      )}
+
     </div>
   )
 }
