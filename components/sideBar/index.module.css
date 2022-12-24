@@ -14,13 +14,17 @@
 	width:80%;
 	padding:15px;
 	color:var(--clr_white);
-	background-color: Transparent;
+	background-color: black;
 	border: none;      
 	border-radius:10px;
 	outline:red;
 	text-align:left;
-	/* border-bottom:1px solid var( --clr_primary); */
-	border-left:1px solid var( --clr_primary);
+	border-top:1px solid var( --clr_primary);
+	border-left:5px solid var( --clr_primary);
+	border-bottom:1px solid var( --clr_primary);
+	border-right:1px solid var( --clr_primary);
+
+
 	transition: all 0.3s ease-in-out ;
 
 }
