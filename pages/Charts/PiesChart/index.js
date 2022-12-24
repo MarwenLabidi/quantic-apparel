@@ -10,7 +10,8 @@ const PiesChart = () => {
   return (
     <div className={piesChart}>
    {
-    (data)&&(data.map((pieData,index)=>(
+    (data)&&(data.map((pieData,index)=>(<div>
+      <h3>{pieData[0].id}</h3>
       <ResponsivePie
       data={pieData}
       key={index}
@@ -30,7 +31,7 @@ const PiesChart = () => {
       arcLabelsTextColor={{ from: "color", modifiers: [["darker", 2]] }}
       height={250}
       width={250}
-    />
+    /></div>
 
     )))
    }
