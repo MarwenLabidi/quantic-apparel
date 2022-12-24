@@ -1,4 +1,5 @@
 .home{
-	background-color:blue;
+	background-color:var(--clr_dark);
+	color:var(--clr_white);
 	width:80%;
 }

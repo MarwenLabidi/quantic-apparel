@@ -1,4 +1,8 @@
 .sideBar{
-	background-color:green;
+	background-color:var(--clr_dark);
 	width:20%;
+	border-right:1px solid var(--clr_white);
+}
+.logo{
+	margin:25px auto;
 }
