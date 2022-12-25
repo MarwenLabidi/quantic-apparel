@@ -19,7 +19,7 @@ const Scatterplot = (props) => {
       {props.data&&(
         <ResponsiveScatterPlot
         data={props.data}
-        margin={{ top: 60, right: 140, bottom: 70, left: 90 }}
+        margin={{ top: 160, right: 140, bottom: 160, left: 130 }}
         xScale={{ type: 'linear', min: 0, max: 'auto' }}
         xFormat=">-.2f"
         yScale={{ type: 'linear', min: 0, max: 'auto' }}

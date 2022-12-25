@@ -1,4 +1,6 @@
 .scatterplot{
 	width:80%;
 	background-color:white;
+	border:solid 11px var(--clr_primary);
+
 }

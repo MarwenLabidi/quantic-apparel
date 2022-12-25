@@ -22,9 +22,9 @@ const BarGraph = (props) => {
                                 keys={["TreesNumber"]} 
                                 indexBy='Arrondissent'
                                 margin={{
-                                        top: 100,
+                                        top: 150,
                                         right: 80,
-                                        bottom: 100,
+                                        bottom: 150,
                                         left: 80,
                                 }}
                                 padding={0.7}
