@@ -1,5 +1,5 @@
 import React from "react";
-import { useTable, useSortBy, useGlobalFilter, useFilters } from "react-table";
+import { useTable, useSortBy, useGlobalFilter, useFilters,usePagination } from "react-table";
 import { COLUMNN } from "./column";
 import GlobalFiltering from "./GlobalFiltering";
 import { table, td, th, tr,checkboxHideColumn } from "./table.module.css";
@@ -7,21 +7,25 @@ const Table = ({ data }) => {
         const columns = React.useMemo(() => COLUMNN, []);
         const datas = React.useMemo(() => data, []);
         const tableInstance = useTable(
-                { columns, data: datas },
+                { columns, data: datas,initialState: { pageIndex: 0, pageSize: 4 }},
                 useFilters,
                 useGlobalFilter,
-                useSortBy
+                useSortBy,
+                usePagination,
         );
         const {
                 getTableProps,
                 getTableBodyProps,
                 headerGroups,
-                rows,
+                page,
+                nextPage,
+                previousPage,
                 prepareRow,
                 state,
                 setGlobalFilter,
                 allColumns,
                 getToggleHideAllColumnsProps,
+                state: { pageIndex, pageSize }
         } = tableInstance;
         const { globalFilter } = state;
         return (
@@ -84,7 +88,7 @@ const Table = ({ data }) => {
                                         ))}
                                 </thead>
                                 <tbody className={td} {...getTableBodyProps()}>
-                                        {rows.map((row,index) => {
+                                        {page.map((row,index) => {
                                                 prepareRow(row);
                                                 return (
                                                         <tr
