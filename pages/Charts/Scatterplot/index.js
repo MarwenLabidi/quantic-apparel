@@ -16,10 +16,12 @@ const Scatterplot = (props) => {
 
   return (
     <div className={scatterplot}>
+        <p style={{textAlign: 'center', padding: '20px 0 0 0', color: 'gray'}} >Visualizing the relationship between tree height and circumference.</p>
+
       {props.data&&(
         <ResponsiveScatterPlot
         data={props.data}
-        margin={{ top: 160, right: 140, bottom: 160, left: 130 }}
+        margin={{ top: 160, right: 140, bottom: 200, left: 130 }}
         xScale={{ type: 'linear', min: 0, max: 'auto' }}
         xFormat=">-.2f"
         yScale={{ type: 'linear', min: 0, max: 'auto' }}

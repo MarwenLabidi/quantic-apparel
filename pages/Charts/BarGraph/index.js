@@ -17,6 +17,7 @@ const BarGraph = (props) => {
 
         return (
                 <div className={barGraph}>
+                        <p style={{textAlign: 'center', padding: '20px 0 0 0', color: 'gray'}} >Visualizing the number of trees across each arrondissement</p>
                   {props.data&&(<ResponsiveBar
                                 data={props.data}
                                 keys={["TreesNumber"]} 
@@ -24,7 +25,7 @@ const BarGraph = (props) => {
                                 margin={{
                                         top: 150,
                                         right: 80,
-                                        bottom: 150,
+                                        bottom: 200,
                                         left: 80,
                                 }}
                                 padding={0.7}

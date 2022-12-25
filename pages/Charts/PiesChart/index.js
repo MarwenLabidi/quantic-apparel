@@ -17,6 +17,8 @@ const PiesChart = (props) => {
 
   return (
     <div className={piesChart}>
+              <p style={{textAlign: 'center', padding: '20px 0 0 0', color: 'gray'}} >Visualizing the percentage of trees that are considered "remarquable" in each arrondissement.</p>
+
    {
     (props.data)&&(props.data.map((pieData,index)=>(
     <div key={`divivi${pieData[0].id}`}>

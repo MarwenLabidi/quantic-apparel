@@ -9,7 +9,7 @@ const GlobalFiltering = ({ filter, setFilter }) => {
         return (
                 <span>
                        
-                        <input   style={{margin: '20px auto', display: 'block', width: '500px',textAlign:'center'}} 
+                        <input   style={{margin: '5px auto', display: 'block', width: '500px',textAlign:'center'}} 
                                 value={filter || ""}
                                 onChange={(e) => {
 					// setValue(e.target.value)

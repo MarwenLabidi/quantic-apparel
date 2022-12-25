@@ -7,7 +7,7 @@ const Table = ({ data }) => {
         const columns = React.useMemo(() => COLUMNN, []);
         const datas = React.useMemo(() => data, []);
         const tableInstance = useTable(
-                { columns, data: datas,initialState: {  pageSize: 15 }},
+                { columns, data: datas,initialState: {  pageSize: 8 }},
                 useFilters,
                 useGlobalFilter,
                 useSortBy,
