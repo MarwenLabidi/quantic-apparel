@@ -1,19 +1,24 @@
+const URL="http://localhost:3000/api/GetTheHeightAndTheCircumferenceForEchTree"
 import {scatterplot}from"./index.module.css"
 import{ResponsiveScatterPlot} from"@nivo/scatterplot"
-const URL="http://localhost:3000/api/GetTheHeightAndTheCircumferenceForEchTree"
-import useSWR from "swr";
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-const Scatterplot = () => {
-  const { data, error, isLoading } = useSWR(URL, fetcher);
+export async function getStaticProps() {
+  const res = await fetch(URL);
+  const data = await res.json()
+ 
+  return {
+    props: {
+      data,
+    },
+  }
+ }
+const Scatterplot = (props) => {
 
   return (
     <div className={scatterplot}>
-        {isLoading && <div>Loading...</div>}
-      {error && <div>Error: {error.message}</div>}
-      {data&&(
+      {props.data&&(
         <ResponsiveScatterPlot
-        data={data}
+        data={props.data}
         margin={{ top: 60, right: 140, bottom: 70, left: 90 }}
         xScale={{ type: 'linear', min: 0, max: 'auto' }}
         xFormat=">-.2f"

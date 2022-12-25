@@ -1,19 +1,24 @@
 const URL = "http://localhost:3000/api/CountTreesNumberForEachArrondissent";
 import { barGraph } from "./index.module.css";
 import { ResponsiveBar } from "@nivo/bar";
-import useSWR from "swr";
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-const BarGraph = () => {
-        const { data, error, isLoading } = useSWR(URL, fetcher);
-     
+export async function getStaticProps() {
+        const res = await fetch(URL);
+        const data = await res.json()
+       
+        return {
+          props: {
+            data,
+          },
+        }
+       }
+       
+const BarGraph = (props) => {
 
         return (
                 <div className={barGraph}>
-                          {isLoading && <div>Loading...</div>}
-      {error && <div>Error: {error.message}</div>}
-                  {data&&(            <ResponsiveBar
-                                data={data}
+                  {props.data&&(<ResponsiveBar
+                                data={props.data}
                                 keys={["TreesNumber"]} 
                                 indexBy='Arrondissent'
                                 margin={{
