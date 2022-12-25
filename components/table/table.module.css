@@ -1,7 +1,7 @@
 .table {
-	font-family: Arial, Helvetica, sans-serif;
-	border-collapse: collapse;
-	width: 100%;
+	/* border-collapse: collapse; */
+	width: 90%;
+	margin:20px auto;
       }
       
       .td, .th {
