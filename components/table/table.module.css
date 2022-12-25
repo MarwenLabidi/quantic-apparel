@@ -28,3 +28,21 @@
 		gap:40px;
 		padding-top:20px;
 	}
+
+	.footer{
+		/* background-color:red; */
+		display:flex;
+		justify-content:space-between;
+	}
+	.note{
+	margin-left:15px;
+	color:gray;
+	}
+	.button:hover{
+		cursor:pointer;
+		
+	}
+	.button{
+		margin-right:15px;
+	
+	}

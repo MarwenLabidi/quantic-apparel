@@ -2,12 +2,12 @@ import React from "react";
 import { useTable, useSortBy, useGlobalFilter, useFilters,usePagination } from "react-table";
 import { COLUMNN } from "./column";
 import GlobalFiltering from "./GlobalFiltering";
-import { table, td, th, tr,checkboxHideColumn } from "./table.module.css";
+import { table, td, th, tr,checkboxHideColumn,footer,button,note } from "./table.module.css";
 const Table = ({ data }) => {
         const columns = React.useMemo(() => COLUMNN, []);
         const datas = React.useMemo(() => data, []);
         const tableInstance = useTable(
-                { columns, data: datas,initialState: { pageIndex: 0, pageSize: 4 }},
+                { columns, data: datas,initialState: {  pageSize: 4 }},
                 useFilters,
                 useGlobalFilter,
                 useSortBy,
@@ -20,14 +20,17 @@ const Table = ({ data }) => {
                 page,
                 nextPage,
                 previousPage,
+                canNextPage,
+                canPreviousPage,
                 prepareRow,
                 state,
                 setGlobalFilter,
                 allColumns,
                 getToggleHideAllColumnsProps,
-                state: { pageIndex, pageSize }
+                state: {  pageSize },
+                pageOptions
         } = tableInstance;
-        const { globalFilter } = state;
+        const { globalFilter,pageIndex } = state;
         return (
                 <>
                         <GlobalFiltering
@@ -114,6 +117,21 @@ const Table = ({ data }) => {
                                         })}
                                 </tbody>
                         </table>
+                        <div className={footer}>
+        <p className={note}>Nt: you can sort the column by clicking on the header</p>
+                        <div>
+                                <span>
+                                        Page{' '}
+                                        <strong>
+                                                {pageIndex+1} of {pageOptions.length}
+
+
+                                         </strong>{' '}
+                                </span>
+                                <button onClick={()=>previousPage()} disabled={!canPreviousPage} className={button}>Previous</button>
+                                <button onClick={()=>nextPage()} disabled={!canNextPage} className={button}>Next</button>
+                        </div>
+      </div>
                 </>
         );
 };

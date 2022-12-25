@@ -1,4 +1,4 @@
-import {LesArbresRemarquables,footer,note,button}from"./index.module.css"
+import {LesArbresRemarquables,}from"./index.module.css"
 import useSWR from "swr";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const URL="http://localhost:3000/api/GetLesArbresRemarquablesData"
@@ -13,9 +13,7 @@ const LesArbresRemarquable = () => {
       {error && <div>Error: {error.message}</div>}
       {data && (<Table data={data} />)}
 
-      <div className={footer}>
-        <p className={note}>Nt: you can sort the column by clicking on the header</p>
-      </div>
+    
     </div>
   )
 }
