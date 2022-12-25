@@ -1,13 +1,24 @@
+const URL="http://localhost:3000/api/GetLesArbresRemarquablesData"
+import {LesArbresRemarquables,}from"../styles/Home.module.css"
+import Table from "../components/table/Table";
 
-import {home,header} from "../styles/Home.module.css";
 
+export async function getStaticProps() {
+ const res = await fetch(URL);
+ const data = await res.json()
 
-export default function Home() {
-        return (
-                <div className={home}>
-                        <header className={header}>
-
-                        </header>
-                </div>
-        );
+ return {
+   props: {
+     data,
+   },
+ }
 }
+const LesArbresRemarquable = (props) => {
+  return (
+    <div className={LesArbresRemarquables}>
+      {props.data && (<Table data={props.data} />)}   
+    </div>
+  )
+}
+
+export default LesArbresRemarquable

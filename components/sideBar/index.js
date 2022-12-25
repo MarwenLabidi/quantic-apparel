@@ -23,18 +23,10 @@ const SideBar = () => {
                                 height={38}
                         />
                         <main className={menu}>
-                                <section className={overview}>
-                                        <p className={title}>Menu</p>
-
-                                        <Link style={{ textDecoration: "none" }} href='/'>
-                                                <button className={button}>
-                                                        Overview
-                                                </button>
-                                        </Link>
-                                </section>
+                        
                                 <section className={pages}>
                                         <p className={title}>Pages</p>
-                                        <Link style={{ textDecoration: "none" }} href='/RemarkableTrees'>
+                                        <Link style={{ textDecoration: "none" }} href='/'>
                                                 <button className={button}>
                                                         Remarkable trees
                                                 </button>

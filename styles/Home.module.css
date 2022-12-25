@@ -1,10 +1,4 @@
-.home{
-	background-color:var(--clr_white);
-	color:var(--clr_white);
+.LesArbresRemarquables{
 	width:80%;
-}
-
-.header{
-	height:20vh;
-	background: linear-gradient(to bottom, #5f259f, #d7bff0);
+	background-color:white;
 }
