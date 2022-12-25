@@ -10,11 +10,12 @@ const PiesChart = () => {
   return (
     <div className={piesChart}>
    {
-    (data)&&(data.map((pieData,index)=>(<div>
-      <h3 className={name}>{pieData[0].id}</h3>
+    (data)&&(data.map((pieData,index)=>(
+    <div key={`divivi${pieData[0].id}`}>
+      <h3 key={pieData[0].id} className={name}>{pieData[0].id}</h3>
       <ResponsivePie
       data={pieData}
-      key={index}
+      key={`piememe${pieData[0].id}`}
       // margin={{ top: 340, right: 280, bottom: 280, left: 280 }}
       innerRadius={0.5}
       padAngle={0.7}
