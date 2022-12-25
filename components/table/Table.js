@@ -2,7 +2,7 @@ import React from "react";
 import { useTable, useSortBy, useGlobalFilter, useFilters } from "react-table";
 import { COLUMNN } from "./column";
 import GlobalFiltering from "./GlobalFiltering";
-import { table, td, th, tr } from "./table.module.css";
+import { table, td, th, tr,checkboxHideColumn } from "./table.module.css";
 const Table = ({ data }) => {
         const columns = React.useMemo(() => COLUMNN, []);
         const datas = React.useMemo(() => data, []);
@@ -31,10 +31,10 @@ const Table = ({ data }) => {
                                 setFilter={setGlobalFilter}
                         />
                         <div>
-                                <div>
+                                <div className={checkboxHideColumn} >
                                         {allColumns.map((column,index) => (
-                                                <div key={`first4${index}`}>
-                                                        <label key={`firsdfsfsdt4${index}`}>
+                                                <div  key={`first4${index}`}>
+                                                        <label  key={`firsdfsfsdt4${index}`}>
                                                                 <input key={`inputcheckbox${index}`}
                                                                         type='checkbox'
                                                                         {...column.getToggleHiddenProps()}
