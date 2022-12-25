@@ -1,10 +1,7 @@
 .piesChart{
 	width:80%;
 	background-color:white;
-	overflow-y: scroll; 
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	justify-items:center;
+	overflow:hidden;
 	text-align:center;
 	/* gap:30px; */
 	border:solid 11px var(--clr_primary);
@@ -13,4 +10,13 @@
 .name{
 	margin-top:70px;
 
+}
+.grid{
+	overflow-y: scroll; 
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-items:center;
+	/* background-color:red; */
+	width:100%;
+	height:100%;
 }
