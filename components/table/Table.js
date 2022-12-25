@@ -2,7 +2,7 @@ import React from "react";
 import { useTable, useSortBy } from "react-table";
 import { COLUMNN } from "./column";
 import { table, td, th, tr } from "./table.module.css";
-const SortingTable = ({ data }) => {
+const Table = ({ data }) => {
         const columns = React.useMemo(() => COLUMNN, []);
         const datas = React.useMemo(() => data, []);
         const tableInstance = useTable({ columns, data: datas }, useSortBy);
@@ -32,7 +32,7 @@ const SortingTable = ({ data }) => {
 										)}
 									</th>
 																	<span>
-																	{column.isSorted ? (column.isSortedDesc ? " 🔽" : " 🔼") : ""}
+																	{column.isSorted ? (column.isSortedDesc ? "🔽" : "🔼") : ""}
 																</span>
 								</>
                                                         )
@@ -67,4 +67,4 @@ const SortingTable = ({ data }) => {
         );
 };
 
-export default SortingTable;
+export default Table;
