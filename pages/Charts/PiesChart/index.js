@@ -24,6 +24,8 @@ const PiesChart = (props) => {
       <ResponsivePie
       data={pieData}
       key={`piememe${pieData[0].id}`}
+      colors='#5f259f'
+
       margin={{ top: 35, right: 35, bottom: 35, left: 35 }}
       innerRadius={0.5}
       padAngle={0.7}

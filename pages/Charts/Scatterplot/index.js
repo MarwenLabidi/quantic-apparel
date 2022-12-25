@@ -27,6 +27,8 @@ const Scatterplot = (props) => {
         blendMode="multiply"
         axisTop={null}
         axisRight={null}
+        colors='#5f259f'
+
         axisBottom={{
             orient: 'bottom',
             tickSize: 5,
