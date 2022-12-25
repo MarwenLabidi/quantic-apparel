@@ -14,12 +14,30 @@ const Table = ({ data }) => {
                 rows,
                 prepareRow,
                 state,
-                setGlobalFilter
+                setGlobalFilter,
+                allColumns,
+                getToggleHideAllColumnsProps,
         } = tableInstance;
         const {globalFilter}=state
         return (
                 <>
                 <GlobalFiltering filter={globalFilter} setFilter={setGlobalFilter}/>
+                <div>
+                        <div>
+                                {
+                                        allColumns.map(column=>(
+                                                <div key={column.id}>
+                                                        <label>
+                                                                <input type="checkbox" {...column.getToggleHiddenProps()}/>
+                                                                {column.Header}
+                                                        </label>
+                                                </div>
+                                        ))
+
+                                }
+                        </div>
+                                
+                </div>
                         <table className={table} {...getTableProps()}>
                                 <thead className={th}>
                                         {headerGroups.map((headerGroup) => (
