@@ -9,6 +9,8 @@ const PiesChart = () => {
 
   return (
     <div className={piesChart}>
+        {isLoading && <div>Loading...</div>}
+      {error && <div>Error: {error.message}</div>}
    {
     (data)&&(data.map((pieData,index)=>(
     <div key={`divivi${pieData[0].id}`}>

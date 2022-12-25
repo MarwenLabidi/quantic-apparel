@@ -9,6 +9,8 @@ const Scatterplot = () => {
 
   return (
     <div className={scatterplot}>
+        {isLoading && <div>Loading...</div>}
+      {error && <div>Error: {error.message}</div>}
       {data&&(
         <ResponsiveScatterPlot
         data={data}

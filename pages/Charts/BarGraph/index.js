@@ -10,6 +10,8 @@ const BarGraph = () => {
 
         return (
                 <div className={barGraph}>
+                          {isLoading && <div>Loading...</div>}
+      {error && <div>Error: {error.message}</div>}
                   {data&&(            <ResponsiveBar
                                 data={data}
                                 keys={["TreesNumber"]} 
