@@ -5,7 +5,7 @@ const ColumFilter = ({column}) => {
   return (
 	<span>
 	search by column:{''}
-	<input value={filterValue||''} onClick={e=>e.stopPropagation()}  onChange={e=>{setFilter(e.target.value)}}/>
+	<input  value={filterValue||''} onClick={e=>e.stopPropagation()}  onChange={e=>{setFilter(e.target.value)}}/>
     </span>
   )
 }

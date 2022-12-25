@@ -33,9 +33,9 @@ const Table = ({ data }) => {
                         <div>
                                 <div>
                                         {allColumns.map((column,index) => (
-                                                <div key={column.id}>
-                                                        <label>
-                                                                <input key={index}
+                                                <div key={`first4${index}`}>
+                                                        <label key={`firsdfsfsdt4${index}`}>
+                                                                <input key={`inputcheckbox${index}`}
                                                                         type='checkbox'
                                                                         {...column.getToggleHiddenProps()}
                                                                 />
@@ -47,17 +47,18 @@ const Table = ({ data }) => {
                         </div>
                         <table className={table} {...getTableProps()}>
                                 <thead className={th}>
-                                        {headerGroups.map((headerGroup) => (
-                                                <tr 
+                                        {headerGroups.map((headerGroup,index) => (
+                                                <tr key={`tr1${index}`}
                                                         className={tr}
                                                         {...headerGroup.getHeaderGroupProps()}>
                                                         {headerGroup.headers.map(
-                                                                (column) => (
-                                                                        <>
-                                                                                <th
+                                                                (column,index) => (
+                                                                       
+                                                                                <th key={`th1${index}`}
                                                                                         {...column.getHeaderProps(
                                                                                                 column.getSortByToggleProps()
                                                                                         )}>
+
                                                                                         {column.render(
                                                                                                 "Header"
                                                                                         )}
@@ -68,33 +69,34 @@ const Table = ({ data }) => {
                                                                                                           )
                                                                                                         : null}
                                                                                         </div>
-                                                                                        {column.isSorted
-                                                                                        ? column.isSortedDesc
-                                                                                                ? "🔽"
-                                                                                                : "🔼"
-                                                                                        : ""}
+                                                                                        <span>
+                                                                                                {column.isSorted
+                                                                                                        ? column.isSortedDesc
+                                                                                                                ? "🔽"
+                                                                                                                : "🔼"
+                                                                                                        : ""}
+                                                                                        </span>
                                                                                 </th>
-
-                                                                               
-                                                                        </>
+                                                                        
                                                                 )
                                                         )}
                                                 </tr>
                                         ))}
                                 </thead>
                                 <tbody className={td} {...getTableBodyProps()}>
-                                        {rows.map((row) => {
+                                        {rows.map((row,index) => {
                                                 prepareRow(row);
                                                 return (
                                                         <tr
+                                                        key={`tr2${index}`}
                                                                 className={tr}
                                                                 {...row.getRowProps()}>
                                                                 {row.cells.map(
                                                                         (
-                                                                                cell
+                                                                                cell,index
                                                                         ) => {
                                                                                 return (
-                                                                                        <td
+                                                                                        <td key={`tdd1${index}`}
                                                                                                 {...cell.getCellProps()}>
                                                                                                 {cell.render(
                                                                                                         "Cell"
