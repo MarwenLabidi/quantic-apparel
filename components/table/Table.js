@@ -2,12 +2,12 @@ import React from "react";
 import { useTable, useSortBy, useGlobalFilter, useFilters,usePagination } from "react-table";
 import { COLUMNN } from "./column";
 import GlobalFiltering from "./GlobalFiltering";
-import { table, td, th, tr,checkboxHideColumn,footer,button,note } from "./table.module.css";
+import { table, td, th, tr,checkboxHideColumn,footer,button,note,buttonLeft } from "./table.module.css";
 const Table = ({ data }) => {
         const columns = React.useMemo(() => COLUMNN, []);
         const datas = React.useMemo(() => data, []);
         const tableInstance = useTable(
-                { columns, data: datas,initialState: {  pageSize: 4 }},
+                { columns, data: datas,initialState: {  pageSize: 15 }},
                 useFilters,
                 useGlobalFilter,
                 useSortBy,
@@ -129,7 +129,7 @@ const Table = ({ data }) => {
                                          </strong>{' '}
                                 </span>
                                 <button onClick={()=>previousPage()} disabled={!canPreviousPage} className={button}>Previous</button>
-                                <button onClick={()=>nextPage()} disabled={!canNextPage} className={button}>Next</button>
+                                <button onClick={()=>nextPage()} disabled={!canNextPage} className={buttonLeft}>Next</button>
                         </div>
       </div>
                 </>

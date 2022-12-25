@@ -25,24 +25,24 @@
 		display:flex;
 		/* background-color:red; */
 		justify-content:Center;
-		gap:40px;
+		gap:50px;
 		padding-top:20px;
 	}
 
 	.footer{
-		/* background-color:red; */
-		display:flex;
-		justify-content:space-between;
-	}
-	.note{
-	margin-left:15px;
-	color:gray;
-	}
-	.button:hover{
-		cursor:pointer;
-		
-	}
-	.button{
-		margin-right:15px;
+	/* background-color:red; */
+	display:flex;
+	justify-content:space-between;
+}
+.note{
+margin-left:65px;
+color:gray;
+}
+.button:hover,.buttonLeft:hover{
+	cursor:pointer;
 	
-	}
+}
+.buttonLeft{
+	margin-right:65px;
+
+}

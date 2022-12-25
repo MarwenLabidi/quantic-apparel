@@ -9,5 +9,4 @@ export const COLUMNN = [
         { Header: "circonferenceencm",accessor:"circonferenceencm",Filter:ColumFilter },
         { Header: "hauteurenm",accessor:"hauteurenm",Filter:ColumFilter },
         { Header: "dateplantation",accessor:"dateplantation",Cell:({value})=>{return format(new Date(value),'dd/MM/yyyy') },Filter:ColumFilter },
-        { Header: "adresse",accessor:"adresse",Filter:ColumFilter,disableFilters:false },
 ];
