@@ -1,12 +1,17 @@
 import React from "react";
-import { useTable, useSortBy,useGlobalFilter,useFilters } from "react-table";
+import { useTable, useSortBy, useGlobalFilter, useFilters } from "react-table";
 import { COLUMNN } from "./column";
 import GlobalFiltering from "./GlobalFiltering";
 import { table, td, th, tr } from "./table.module.css";
 const Table = ({ data }) => {
         const columns = React.useMemo(() => COLUMNN, []);
         const datas = React.useMemo(() => data, []);
-        const tableInstance = useTable({ columns, data: datas },useFilters,useGlobalFilter, useSortBy);
+        const tableInstance = useTable(
+                { columns, data: datas },
+                useFilters,
+                useGlobalFilter,
+                useSortBy
+        );
         const {
                 getTableProps,
                 getTableBodyProps,
@@ -18,48 +23,60 @@ const Table = ({ data }) => {
                 allColumns,
                 getToggleHideAllColumnsProps,
         } = tableInstance;
-        const {globalFilter}=state
+        const { globalFilter } = state;
         return (
                 <>
-                <GlobalFiltering filter={globalFilter} setFilter={setGlobalFilter}/>
-                <div>
+                        <GlobalFiltering
+                                filter={globalFilter}
+                                setFilter={setGlobalFilter}
+                        />
                         <div>
-                                {
-                                        allColumns.map(column=>(
+                                <div>
+                                        {allColumns.map((column,index) => (
                                                 <div key={column.id}>
                                                         <label>
-                                                                <input type="checkbox" {...column.getToggleHiddenProps()}/>
+                                                                <input key={index}
+                                                                        type='checkbox'
+                                                                        {...column.getToggleHiddenProps()}
+                                                                />
                                                                 {column.Header}
                                                         </label>
                                                 </div>
-                                        ))
-
-                                }
+                                        ))}
+                                </div>
                         </div>
-                                
-                </div>
                         <table className={table} {...getTableProps()}>
                                 <thead className={th}>
                                         {headerGroups.map((headerGroup) => (
-                                                <tr
+                                                <tr 
                                                         className={tr}
                                                         {...headerGroup.getHeaderGroupProps()}>
                                                         {headerGroup.headers.map(
                                                                 (column) => (
                                                                         <>
-                                                                                                <th
-                                                                                                        {...column.getHeaderProps(
-                                                                                                                column.getSortByToggleProps()
-                                                                                                        )}>
-                                                                                                        {column.render(
-                                                                                                                "Header"
-                                                                                                        )}
-                                                                                                        <div>{column.canFilter?column.render('Filter'):null}</div>
-                                                                                                </th>
-                                                                                                                                                                <div>
-                                                                                                                                                                {column.isSorted ? (column.isSortedDesc ? "🔽" : "🔼") : ""}
-                                                                                                                                                        </div>
-                                                                                        </>
+                                                                                <th
+                                                                                        {...column.getHeaderProps(
+                                                                                                column.getSortByToggleProps()
+                                                                                        )}>
+                                                                                        {column.render(
+                                                                                                "Header"
+                                                                                        )}
+                                                                                        <div>
+                                                                                                {column.canFilter
+                                                                                                        ? column.render(
+                                                                                                                  "Filter"
+                                                                                                          )
+                                                                                                        : null}
+                                                                                        </div>
+                                                                                        {column.isSorted
+                                                                                        ? column.isSortedDesc
+                                                                                                ? "🔽"
+                                                                                                : "🔼"
+                                                                                        : ""}
+                                                                                </th>
+
+                                                                               
+                                                                        </>
                                                                 )
                                                         )}
                                                 </tr>
@@ -73,7 +90,9 @@ const Table = ({ data }) => {
                                                                 className={tr}
                                                                 {...row.getRowProps()}>
                                                                 {row.cells.map(
-                                                                        (cell) => {
+                                                                        (
+                                                                                cell
+                                                                        ) => {
                                                                                 return (
                                                                                         <td
                                                                                                 {...cell.getCellProps()}>
