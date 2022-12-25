@@ -1,19 +1,22 @@
-import {LesArbresRemarquables,}from"./index.module.css"
-import useSWR from "swr";
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const URL="http://localhost:3000/api/GetLesArbresRemarquablesData"
+import {LesArbresRemarquables,}from"./index.module.css"
 import Table from "../../components/table/Table";
-const LesArbresRemarquable = () => {
-  const { data, error, isLoading } = useSWR(URL, fetcher);
 
+
+export async function getStaticProps() {
+ const res = await fetch(URL);
+ const data = await res.json()
+
+ return {
+   props: {
+     data,
+   },
+ }
+}
+const LesArbresRemarquable = (props) => {
   return (
     <div className={LesArbresRemarquables}>
-      {/* <h2>Les arbres remarquables</h2> */}
-      {isLoading && <div>Loading...</div>}
-      {error && <div>Error: {error.message}</div>}
-      {data && (<Table data={data} />)}
-
-    
+      {props.data && (<Table data={props.data} />)}   
     </div>
   )
 }
