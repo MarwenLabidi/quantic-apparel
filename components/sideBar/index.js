@@ -34,7 +34,7 @@ const SideBar = () => {
                                 </section>
                                 <section className={pages}>
                                         <p className={title}>Pages</p>
-                                        <Link style={{ textDecoration: "none" }} href='Les-arbres-remarquables'>
+                                        <Link style={{ textDecoration: "none" }} href='/RemarkableTrees'>
                                                 <button className={button}>
                                                         Remarkable trees
                                                 </button>
