@@ -2,7 +2,7 @@
 	/* border-collapse: collapse; */
 	width: 90%;
 	margin:20px auto;
-	overflow-x: scroll;
+	/* table-layout: fixed; */
       }
       
       .td, .th {
@@ -23,7 +23,8 @@
 
 	.checkboxHideColumn{
 		display:flex;
-		background-color:red;
+		/* background-color:red; */
 		justify-content:Center;
 		gap:40px;
+		padding-top:20px;
 	}

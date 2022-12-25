@@ -4,8 +4,8 @@ const ColumFilter = ({column}) => {
 	const {filterValue,setFilter}=column
   return (
 	<span>
-	search by column:{''}
-	<input  value={filterValue||''} onClick={e=>e.stopPropagation()}  onChange={e=>{setFilter(e.target.value)}}/>
+	{/* search by column:{''} */}
+	<input placeholder='Search in column'  value={filterValue||''} onClick={e=>e.stopPropagation()}  onChange={e=>{setFilter(e.target.value)}}/>
     </span>
   )
 }

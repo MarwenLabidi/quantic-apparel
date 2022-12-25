@@ -8,13 +8,14 @@ const GlobalFiltering = ({ filter, setFilter }) => {
 	},1000)
         return (
                 <span>
-                        search:{""}
-                        <input
+                       
+                        <input   style={{margin: '20px auto', display: 'block', width: '500px',textAlign:'center'}} 
                                 value={value || ""}
                                 onChange={(e) => {
 					setValue(e.target.value)
 					onChange(e.target.value)
 				}}
+                                placeholder='Global Search'
                         />
                 </span>
         );
