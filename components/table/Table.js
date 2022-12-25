@@ -1,12 +1,12 @@
 import React from "react";
-import { useTable, useSortBy,useGlobalFilter } from "react-table";
+import { useTable, useSortBy,useGlobalFilter,useFilters } from "react-table";
 import { COLUMNN } from "./column";
 import GlobalFiltering from "./GlobalFiltering";
 import { table, td, th, tr } from "./table.module.css";
 const Table = ({ data }) => {
         const columns = React.useMemo(() => COLUMNN, []);
         const datas = React.useMemo(() => data, []);
-        const tableInstance = useTable({ columns, data: datas },useGlobalFilter, useSortBy);
+        const tableInstance = useTable({ columns, data: datas },useFilters,useGlobalFilter, useSortBy);
         const {
                 getTableProps,
                 getTableBodyProps,
@@ -36,10 +36,11 @@ const Table = ({ data }) => {
                                                                                                         {column.render(
                                                                                                                 "Header"
                                                                                                         )}
+                                                                                                        <div>{column.canFilter?column.render('Filter'):null}</div>
                                                                                                 </th>
-                                                                                                                                                                <span>
+                                                                                                                                                                <div>
                                                                                                                                                                 {column.isSorted ? (column.isSortedDesc ? "🔽" : "🔼") : ""}
-                                                                                                                                                        </span>
+                                                                                                                                                        </div>
                                                                                         </>
                                                                 )
                                                         )}
