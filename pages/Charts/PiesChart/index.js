@@ -1,5 +1,11 @@
-const URL =
-        "http://localhost:3000/api/GetThePercentageOfRemarquableTreeForEachArrondisseent";
+let URL = null;
+if (process.env.NODE_ENV === "development") {
+        URL =
+                "http://localhost:3000/api/GetThePercentageOfRemarquableTreeForEachArrondisseent";
+} else {
+        URL =
+                "https://quantic-apparel.vercel.app/api/GetThePercentageOfRemarquableTreeForEachArrondisseent";
+}
 import { ResponsivePie } from "@nivo/pie";
 import { piesChart, name, grid } from "./index.module.css";
 

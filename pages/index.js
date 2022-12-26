@@ -1,7 +1,12 @@
-const URL = "http://localhost:3000/api/GetLesArbresRemarquablesData";
+let URL = null;
 import { LesArbresRemarquables } from "../styles/Home.module.css";
 import Table from "../components/table/Table";
-
+if (process.env.NODE_ENV === "development") {
+        URL = "http://localhost:3000/api/GetLesArbresRemarquablesData";
+} else {
+        URL =
+                "https://quantic-apparel.vercel.app/api/GetLesArbresRemarquablesData";
+}
 import useSWR from "swr";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const LesArbresRemarquable = () => {

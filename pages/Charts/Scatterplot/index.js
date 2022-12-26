@@ -1,5 +1,11 @@
-const URL =
-        "http://localhost:3000/api/GetTheHeightAndTheCircumferenceForEchTree";
+let URL = null;
+if (process.env.NODE_ENV === "development") {
+        URL =
+                "http://localhost:3000/api/GetTheHeightAndTheCircumferenceForEchTree";
+} else {
+        URL =
+                "https://quantic-apparel.vercel.app/api/GetTheHeightAndTheCircumferenceForEchTree";
+}
 import { scatterplot } from "./index.module.css";
 import { ResponsiveScatterPlot } from "@nivo/scatterplot";
 
