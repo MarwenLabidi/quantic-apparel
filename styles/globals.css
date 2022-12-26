@@ -19,7 +19,10 @@
         font-weight: 600;
         src: url(/fonts/Nexa-Trial-Regular.ttf) format("truetype");
 }
-
+.leaflet-container {
+        height: 65vh;
+        width: 100%;
+}
 /* Box sizing rules */
 *,
 *::before,
