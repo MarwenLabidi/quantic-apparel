@@ -8,6 +8,7 @@ if (process.env.NODE_ENV === "development") {
                 "https://quantic-apparel.vercel.app/api/CountTreesNumberForEachArrondissent";
 }
 import useSWR from "swr";
+import { ClipLoader } from "react-spinners";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const BarGraph = () => {
         const { data, error, isLoading } = useSWR(URL, fetcher);
@@ -24,20 +25,26 @@ const BarGraph = () => {
                                 arrondissement
                         </p>
                         {isLoading && (
-                                <p
+                                <div
                                         style={{
-                                                fontSize: "80px",
-                                                textAlign: "center",
-                                                color: "blue",
-                                                fontWeight: "bold",
+                                                display: "flex",
+                                                justifyContent: "center",
+                                                padding: "150px",
                                         }}>
-                                        Loading...
-                                </p>
+                                        <ClipLoader
+                                                color={"#800080"}
+                                                // loading={loading}
+                                                // cssOverride={override}
+                                                size={220}
+                                                aria-label='Loading Spinner'
+                                                data-testid='loader'
+                                        />
+                                </div>
                         )}
                         {error && (
                                 <p
                                         style={{
-                                                fontSize: "80px",
+                                                fontSize: "40px",
                                                 textAlign: "center",
                                                 color: "red",
                                                 fontWeight: "bold",

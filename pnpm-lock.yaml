@@ -14,6 +14,7 @@ specifiers:
   react: 18.2.0
   react-dom: 18.2.0
   react-leaflet: ^4.2.0
+  react-spinners: ^0.13.7
   react-table: ^7.8.0
   swr: ^2.0.0
 
@@ -31,6 +32,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-leaflet: 4.2.0_yydtlhsdonbqao6vgvkwhv2zki
+  react-spinners: 0.13.7_biqbaboplfbrettd7655fr4n2y
   react-table: 7.8.0_react@18.2.0
   swr: 2.0.0_react@18.2.0
 
@@ -659,6 +661,16 @@ packages:
 
   /react-lifecycles-compat/3.0.4:
     resolution: {integrity: sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==}
+    dev: false
+
+  /react-spinners/0.13.7_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-mRamn56bfxWbGcacif5RT3UbeJaXi2AttjtPwSmomuv2IcxjpbfETCzdTvaQpNDk0E33ENJsStsQeKAZFuJcpA==}
+    peerDependencies:
+      react: ^16.0.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /react-table/7.8.0_react@18.2.0:

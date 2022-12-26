@@ -10,6 +10,7 @@ import { scatterplot } from "./index.module.css";
 import { ResponsiveScatterPlot } from "@nivo/scatterplot";
 
 import useSWR from "swr";
+import { ClipLoader } from "react-spinners";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const Scatterplot = () => {
         const { data, error, isLoading } = useSWR(URL, fetcher);
@@ -26,20 +27,26 @@ const Scatterplot = () => {
                                 and circumference.
                         </p>
                         {isLoading && (
-                                <p
+                                <div
                                         style={{
-                                                fontSize: "80px",
-                                                textAlign: "center",
-                                                color: "blue",
-                                                fontWeight: "bold",
+                                                display: "flex",
+                                                justifyContent: "center",
+                                                padding: "150px",
                                         }}>
-                                        Loading...
-                                </p>
+                                        <ClipLoader
+                                                color={"#800080"}
+                                                // loading={loading}
+                                                // cssOverride={override}
+                                                size={220}
+                                                aria-label='Loading Spinner'
+                                                data-testid='loader'
+                                        />
+                                </div>
                         )}
                         {error && (
                                 <p
                                         style={{
-                                                fontSize: "80px",
+                                                fontSize: "40px",
                                                 textAlign: "center",
                                                 color: "red",
                                                 fontWeight: "bold",
