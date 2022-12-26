@@ -21,9 +21,29 @@ const PiesChart = () => {
                                 considered "remarquable" in each arrondissement.
                         </p>
 
+                        {isLoading && (
+                                <p
+                                        style={{
+                                                fontSize: "80px",
+                                                textAlign: "center",
+                                                color: "blue",
+                                                fontWeight: "bold",
+                                        }}>
+                                        Loading...
+                                </p>
+                        )}
+                        {error && (
+                                <p
+                                        style={{
+                                                fontSize: "80px",
+                                                textAlign: "center",
+                                                color: "red",
+                                                fontWeight: "bold",
+                                        }}>
+                                        Failed to load
+                                </p>
+                        )}
                         <div className={grid}>
-                                {isLoading && <p>Loading...</p>}
-                                {error && <p>Failed to load</p>}
                                 {data &&
                                         data.map((pieData, index) => (
                                                 <div

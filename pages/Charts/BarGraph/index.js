@@ -18,8 +18,28 @@ const BarGraph = () => {
                                 Visualizing the number of trees across each
                                 arrondissement
                         </p>
-                        {isLoading && <p>Loading...</p>}
-                        {error && <p>Failed to load</p>}
+                        {isLoading && (
+                                <p
+                                        style={{
+                                                fontSize: "80px",
+                                                textAlign: "center",
+                                                color: "blue",
+                                                fontWeight: "bold",
+                                        }}>
+                                        Loading...
+                                </p>
+                        )}
+                        {error && (
+                                <p
+                                        style={{
+                                                fontSize: "80px",
+                                                textAlign: "center",
+                                                color: "red",
+                                                fontWeight: "bold",
+                                        }}>
+                                        Failed to load
+                                </p>
+                        )}
                         {data && (
                                 <ResponsiveBar
                                         data={data}

@@ -25,8 +25,28 @@ const LesArbresRemarquable = () => {
                                 culture. and you'll find below more information
                                 about those trees :
                         </p>
-                        {isLoading && <p>Loading...</p>}
-                        {error && <p>Failed to load</p>}
+                        {isLoading && (
+                                <p
+                                        style={{
+                                                fontSize: "80px",
+                                                textAlign: "center",
+                                                color: "blue",
+                                                fontWeight: "bold",
+                                        }}>
+                                        Loading...
+                                </p>
+                        )}
+                        {error && (
+                                <p
+                                        style={{
+                                                fontSize: "80px",
+                                                textAlign: "center",
+                                                color: "red",
+                                                fontWeight: "bold",
+                                        }}>
+                                        Failed to load
+                                </p>
+                        )}
                         {data && <Table data={data} />}
                 </div>
         );
