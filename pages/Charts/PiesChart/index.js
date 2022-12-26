@@ -2,18 +2,11 @@ const URL="http://localhost:3000/api/GetThePercentageOfRemarquableTreeForEachArr
 import { ResponsivePie } from "@nivo/pie"
 import {piesChart,name,grid}from"./index.module.css"
 
-export async function getStaticProps() {
-  const res = await fetch(URL);
-  const data = await res.json()
- 
-  return {
-    props: {
-      data,
-    },
-  }
- }
+import useSWR from "swr";
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-const PiesChart = (props) => {
+const PiesChart = () => {
+  const { data, error, isLoading } = useSWR(URL, fetcher);
 
   return (
     <div className={piesChart}>
@@ -21,7 +14,7 @@ const PiesChart = (props) => {
 
    <div className={grid}>
      {
-      (props.data)&&(props.data.map((pieData,index)=>(
+      (data)&&(data.map((pieData,index)=>(
       <div key={`divivi${pieData[0].id}`}>
         <h3 key={pieData[0].id} className={name}>{pieData[0].id}</h3>
         <ResponsivePie

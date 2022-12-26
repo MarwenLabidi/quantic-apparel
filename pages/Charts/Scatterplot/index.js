@@ -2,25 +2,18 @@ const URL="http://localhost:3000/api/GetTheHeightAndTheCircumferenceForEchTree"
 import {scatterplot}from"./index.module.css"
 import{ResponsiveScatterPlot} from"@nivo/scatterplot"
 
-export async function getStaticProps() {
-  const res = await fetch(URL);
-  const data = await res.json()
- 
-  return {
-    props: {
-      data,
-    },
-  }
- }
-const Scatterplot = (props) => {
+import useSWR from "swr";
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
+const Scatterplot = () => {
+  const { data, error, isLoading } = useSWR(URL, fetcher);
 
   return (
     <div className={scatterplot}>
         <p style={{textAlign: 'center', padding: '20px 0 0 0', color: 'gray'}} >Visualizing the relationship between tree height and circumference.</p>
 
-      {props.data&&(
+      {data&&(
         <ResponsiveScatterPlot
-        data={props.data}
+        data={data}
         margin={{ top: 160, right: 140, bottom: 200, left: 130 }}
         xScale={{ type: 'linear', min: 0, max: 'auto' }}
         xFormat=">-.2f"
