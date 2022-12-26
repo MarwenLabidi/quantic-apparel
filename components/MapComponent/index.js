@@ -15,7 +15,7 @@ import { useState, useEffect } from "react";
 
 let DefaultIcon = L.icon({
         iconUrl:  "/images/location-icon.svg",
-        iconSize: [100, 100],
+        iconSize: [40, 40],
         // iconAnchor: [23, 56],
         // popupAnchor: [0, -56],
 });
@@ -31,16 +31,17 @@ function MultipleMarkers({ data }) {
                         <Marker
                                 key={index}
                                 position={[
-                                        tree.coordinates[0],
                                         tree.coordinates[1],
+                                        tree.coordinates[0],
                                 ]}
                                 icon={DefaultIcon}>
                                 <Popup>
-                                        <p>genre:{tree.genre}</p>
-                                        <p>
-                                                libellefrancais:
+                                        <h3>genre:{' '}{tree.genre}</h3>
+                                        <hr/>
+                                        <h3>
+                                                libellefrancais:{' '}
                                                 {tree.libellefrancais}
-                                        </p>
+                                        </h3>
                                 </Popup>
                         </Marker>
                 );
@@ -70,10 +71,8 @@ const MapComponent = () => {
                                 url={`https://api.mapbox.com/styles/v1/abidimarwen/cla5hdzif000j14t37tq0lcc2/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.NEXT_PUBLIC_MAP_KEY}`}
                         />
 
-                        {/* <MultipleMarkers data={data} /> */}
-                        <Marker
-                                position={center}
-                                icon={DefaultIcon}></Marker>
+                        <MultipleMarkers data={data} />
+                     
                 </MapContainer>
         );
 };
