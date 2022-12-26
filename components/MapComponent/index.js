@@ -11,13 +11,11 @@ import {
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import icon from "../../public/images/iconLocation.png";
-import { useMap } from "react-leaflet";
 import { useState, useEffect } from "react";
 
 let DefaultIcon = L.icon({
-        iconUrl: icon,
-        iconSize: [46, 56],
+        iconUrl:  "/images/location-icon.svg",
+        iconSize: [100, 100],
         // iconAnchor: [23, 56],
         // popupAnchor: [0, -56],
 });
@@ -72,7 +70,10 @@ const MapComponent = () => {
                                 url={`https://api.mapbox.com/styles/v1/abidimarwen/cla5hdzif000j14t37tq0lcc2/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.NEXT_PUBLIC_MAP_KEY}`}
                         />
 
-                        <MultipleMarkers data={data} />
+                        {/* <MultipleMarkers data={data} /> */}
+                        <Marker
+                                position={center}
+                                icon={DefaultIcon}></Marker>
                 </MapContainer>
         );
 };
