@@ -1,6 +1,6 @@
 .sideBar{
 	background-color:var(--clr_dark);
-	width:35%;
+	width:550px;
 	border-right:1px solid var(--clr_white);
 	color:var(--clr_white)
 }

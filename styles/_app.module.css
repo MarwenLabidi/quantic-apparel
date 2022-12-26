@@ -4,4 +4,6 @@
 	height:100vh;
 	width:100%;
 	display:flex;
+	/* add transition */
+	transition:all 2s ease-in-out;
 }
