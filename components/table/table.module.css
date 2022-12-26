@@ -41,7 +41,7 @@
         justify-content: space-between;
 }
 .note {
-        margin-left: 65px;
+        margin-left: 35px;
         color: gray;
 }
 .button:hover,
@@ -49,5 +49,5 @@
         cursor: pointer;
 }
 .buttonLeft {
-        margin-right: 65px;
+        margin-right: 35px;
 }
