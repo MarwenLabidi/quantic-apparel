@@ -20,8 +20,8 @@
         src: url(/fonts/Nexa-Trial-Regular.ttf) format("truetype");
 }
 .leaflet-container {
-        height: 65vh;
-        width: 65%;
+        height: 100%;
+        width: 100%;
 }
 /* Box sizing rules */
 *,

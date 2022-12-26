@@ -1,6 +1,7 @@
 import useSWR from "swr";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
-const URL="http://localhost:3000/api/GetTheCoordinatesAndGenreAndLibelefrancais"
+const URL =
+        "http://localhost:3000/api/GetTheCoordinatesAndGenreAndLibelefrancais";
 import {
         MapContainer,
         TileLayer,
@@ -12,7 +13,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import icon from "../../public/images/iconLocation.png";
 import { useMap } from "react-leaflet";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 
 let DefaultIcon = L.icon({
         iconUrl: icon,
@@ -58,10 +59,8 @@ const MapComponent = () => {
         const [center, setCenter] = useState([48.8566, 2.3522]);
         const [zoom, setZoom] = useState(13);
         const { data, error, isLoading } = useSWR(URL, fetcher);
-        
 
         return (
-  
                 <MapContainer
                         center={center}
                         zoom={zoom}
@@ -70,12 +69,10 @@ const MapComponent = () => {
 
                         <TileLayer
                                 attribution='&copy; <a href="https://github.com/MarwenLabidi">by MarwenLabidi</a> '
-                                url={`https://api.mapbox.com/styles/v1/abidimarwen/cla5hdzif000j14t37tq0lcc2/tiles/256/{z}/{x}/{y}@2x?access_token=${
-                                  process.env.NEXT_PUBLIC_MAP_KEY
-                                }`}
+                                url={`https://api.mapbox.com/styles/v1/abidimarwen/cla5hdzif000j14t37tq0lcc2/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.NEXT_PUBLIC_MAP_KEY}`}
                         />
-                        {/* {data &&
-                        <MultipleMarkers data={data} />} */}
+
+                        <MultipleMarkers data={data} />
                 </MapContainer>
         );
 };
