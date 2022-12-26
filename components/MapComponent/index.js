@@ -14,7 +14,7 @@ import L from "leaflet";
 import { useState, useEffect } from "react";
 
 let DefaultIcon = L.icon({
-        iconUrl:  "/images/location-icon.svg",
+        iconUrl: "/images/location-icon.svg",
         iconSize: [40, 40],
         // iconAnchor: [23, 56],
         // popupAnchor: [0, -56],
@@ -36,10 +36,10 @@ function MultipleMarkers({ data }) {
                                 ]}
                                 icon={DefaultIcon}>
                                 <Popup>
-                                        <h3>genre:{' '}{tree.genre}</h3>
-                                        <hr/>
+                                        <h3>genre: {tree.genre}</h3>
+                                        <hr />
                                         <h3>
-                                                libellefrancais:{' '}
+                                                libellefrancais:{" "}
                                                 {tree.libellefrancais}
                                         </h3>
                                 </Popup>
@@ -72,7 +72,6 @@ const MapComponent = () => {
                         />
 
                         <MultipleMarkers data={data} />
-                     
                 </MapContainer>
         );
 };

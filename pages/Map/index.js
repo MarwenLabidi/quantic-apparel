@@ -1,17 +1,17 @@
-import{map}from'./index.module.css'
-import dynamic from 'next/dynamic';
+import { map } from "./index.module.css";
+import dynamic from "next/dynamic";
 
-const MapWithNoSSR = dynamic(() => import('../../components/MapComponent/index'), {
-  ssr: false,
-});
+const MapWithNoSSR = dynamic(
+        () => import("../../components/MapComponent/index"),
+        {
+                ssr: false,
+        }
+);
 const Map = () => {
-        
-
         return (
-                <div className={map} >
-                <MapWithNoSSR />
-              </div>
-             
+                <div className={map}>
+                        <MapWithNoSSR />
+                </div>
         );
 };
 

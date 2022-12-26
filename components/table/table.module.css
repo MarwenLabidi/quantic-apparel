@@ -1,48 +1,53 @@
 .table {
-	/* border-collapse: collapse; */
-	width: 90%;
-	margin:20px auto;
-	/* table-layout: fixed; */
-      }
-      
-      .td, .th {
-	border: 1px solid #ddd;
-	padding: 8px;
-      }
-      
-      .tr:nth-child(even){background-color: #f2f2f2;}
-      
-      .tr:hover {background-color: #ddd;}
-      
-      .th {
-	padding-top: 12px;
-	padding-bottom: 12px;
-	text-align: center;
-	background-color:var(--clr_primary);
-	color: white;}
-
-	.checkboxHideColumn{
-		display:flex;
-		/* background-color:red; */
-		justify-content:Center;
-		gap:50px;
-		padding-top:20px;
-	}
-
-	.footer{
-	/* background-color:red; */
-	display:flex;
-	justify-content:space-between;
+        /* border-collapse: collapse; */
+        width: 90%;
+        margin: 20px auto;
+        /* table-layout: fixed; */
 }
-.note{
-margin-left:65px;
-color:gray;
-}
-.button:hover,.buttonLeft:hover{
-	cursor:pointer;
-	
-}
-.buttonLeft{
-	margin-right:65px;
 
+.td,
+.th {
+        border: 1px solid #ddd;
+        padding: 8px;
+}
+
+.tr:nth-child(even) {
+        background-color: #f2f2f2;
+}
+
+.tr:hover {
+        background-color: #ddd;
+}
+
+.th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: var(--clr_primary);
+        color: white;
+}
+
+.checkboxHideColumn {
+        display: flex;
+        /* background-color:red; */
+        justify-content: Center;
+        gap: 50px;
+        padding-top: 20px;
+}
+
+.footer {
+        /* background-color:red; */
+        display: flex;
+        justify-content: space-between;
+}
+.note {
+        margin-left: 65px;
+        color: gray;
+}
+.button:hover,
+.buttonLeft:hover {
+        cursor: pointer;
+}
+.buttonLeft {
+        margin-right: 65px;
 }

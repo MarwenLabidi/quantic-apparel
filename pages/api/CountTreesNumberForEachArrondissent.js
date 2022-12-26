@@ -9,7 +9,7 @@ export default async function handler(req, res) {
         try {
                 const Trees = await fetchArbreRemarquableParis();
                 // write a function to count the number of trees for each arrondissement
-		const treesCount=countTreesByArrondissement(Trees);
+                const treesCount = countTreesByArrondissement(Trees);
                 let transformedData = transformDataForBarGraph(treesCount);
 
                 if (Trees.length !== 0) {

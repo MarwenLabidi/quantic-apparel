@@ -1,17 +1,33 @@
 import React from "react";
-import { useTable, useSortBy, useGlobalFilter, useFilters,usePagination } from "react-table";
+import {
+        useTable,
+        useSortBy,
+        useGlobalFilter,
+        useFilters,
+        usePagination,
+} from "react-table";
 import { COLUMNN } from "./column";
 import GlobalFiltering from "./GlobalFiltering";
-import { table, td, th, tr,checkboxHideColumn,footer,button,note,buttonLeft } from "./table.module.css";
+import {
+        table,
+        td,
+        th,
+        tr,
+        checkboxHideColumn,
+        footer,
+        button,
+        note,
+        buttonLeft,
+} from "./table.module.css";
 const Table = ({ data }) => {
         const columns = React.useMemo(() => COLUMNN, []);
         const datas = React.useMemo(() => data, []);
         const tableInstance = useTable(
-                { columns, data: datas,initialState: {  pageSize: 8 }},
+                { columns, data: datas, initialState: { pageSize: 8 } },
                 useFilters,
                 useGlobalFilter,
                 useSortBy,
-                usePagination,
+                usePagination
         );
         const {
                 getTableProps,
@@ -27,10 +43,10 @@ const Table = ({ data }) => {
                 setGlobalFilter,
                 allColumns,
                 getToggleHideAllColumnsProps,
-                state: {  pageSize },
-                pageOptions
+                state: { pageSize },
+                pageOptions,
         } = tableInstance;
-        const { globalFilter,pageIndex } = state;
+        const { globalFilter, pageIndex } = state;
         return (
                 <>
                         <GlobalFiltering
@@ -38,11 +54,13 @@ const Table = ({ data }) => {
                                 setFilter={setGlobalFilter}
                         />
                         <div>
-                                <div className={checkboxHideColumn} >
-                                        {allColumns.map((column,index) => (
-                                                <div  key={`first4${index}`}>
-                                                        <label  key={`firsdfsfsdt4${index}`}>
-                                                                <input key={`inputcheckbox${index}`}
+                                <div className={checkboxHideColumn}>
+                                        {allColumns.map((column, index) => (
+                                                <div key={`first4${index}`}>
+                                                        <label
+                                                                key={`firsdfsfsdt4${index}`}>
+                                                                <input
+                                                                        key={`inputcheckbox${index}`}
                                                                         type='checkbox'
                                                                         {...column.getToggleHiddenProps()}
                                                                 />
@@ -54,18 +72,22 @@ const Table = ({ data }) => {
                         </div>
                         <table className={table} {...getTableProps()}>
                                 <thead className={th}>
-                                        {headerGroups.map((headerGroup,index) => (
-                                                <tr key={`tr1${index}`}
-                                                        className={tr}
-                                                        {...headerGroup.getHeaderGroupProps()}>
-                                                        {headerGroup.headers.map(
-                                                                (column,index) => (
-                                                                       
-                                                                                <th key={`th1${index}`}
+                                        {headerGroups.map(
+                                                (headerGroup, index) => (
+                                                        <tr
+                                                                key={`tr1${index}`}
+                                                                className={tr}
+                                                                {...headerGroup.getHeaderGroupProps()}>
+                                                                {headerGroup.headers.map(
+                                                                        (
+                                                                                column,
+                                                                                index
+                                                                        ) => (
+                                                                                <th
+                                                                                        key={`th1${index}`}
                                                                                         {...column.getHeaderProps(
                                                                                                 column.getSortByToggleProps()
                                                                                         )}>
-
                                                                                         {column.render(
                                                                                                 "Header"
                                                                                         )}
@@ -84,26 +106,28 @@ const Table = ({ data }) => {
                                                                                                         : ""}
                                                                                         </span>
                                                                                 </th>
-                                                                        
-                                                                )
-                                                        )}
-                                                </tr>
-                                        ))}
+                                                                        )
+                                                                )}
+                                                        </tr>
+                                                )
+                                        )}
                                 </thead>
                                 <tbody className={td} {...getTableBodyProps()}>
-                                        {page.map((row,index) => {
+                                        {page.map((row, index) => {
                                                 prepareRow(row);
                                                 return (
                                                         <tr
-                                                        key={`tr2${index}`}
+                                                                key={`tr2${index}`}
                                                                 className={tr}
                                                                 {...row.getRowProps()}>
                                                                 {row.cells.map(
                                                                         (
-                                                                                cell,index
+                                                                                cell,
+                                                                                index
                                                                         ) => {
                                                                                 return (
-                                                                                        <td key={`tdd1${index}`}
+                                                                                        <td
+                                                                                                key={`tdd1${index}`}
                                                                                                 {...cell.getCellProps()}>
                                                                                                 {cell.render(
                                                                                                         "Cell"
@@ -118,20 +142,32 @@ const Table = ({ data }) => {
                                 </tbody>
                         </table>
                         <div className={footer}>
-        <p className={note}>Nt: you can sort the column by clicking on the header</p>
-                        <div>
-                                <span>
-                                        Page{' '}
-                                        <strong>
-                                                {pageIndex+1} of {pageOptions.length}
-
-
-                                         </strong>{' '}
-                                </span>
-                                <button onClick={()=>previousPage()} disabled={!canPreviousPage} className={button}>Previous</button>
-                                <button onClick={()=>nextPage()} disabled={!canNextPage} className={buttonLeft}>Next</button>
+                                <p className={note}>
+                                        Nt: you can sort the column by clicking
+                                        on the header
+                                </p>
+                                <div>
+                                        <span>
+                                                Page{" "}
+                                                <strong>
+                                                        {pageIndex + 1} of{" "}
+                                                        {pageOptions.length}
+                                                </strong>{" "}
+                                        </span>
+                                        <button
+                                                onClick={() => previousPage()}
+                                                disabled={!canPreviousPage}
+                                                className={button}>
+                                                Previous
+                                        </button>
+                                        <button
+                                                onClick={() => nextPage()}
+                                                disabled={!canNextPage}
+                                                className={buttonLeft}>
+                                                Next
+                                        </button>
+                                </div>
                         </div>
-      </div>
                 </>
         );
 };
